@@ -19,7 +19,7 @@ const LoginSignup = () => {
     setError("");
   
     try {
-      const url = state === "signup" ? "http://localhost:3000/user/register" : "http://localhost:3000/user/login";
+      const url = state === "signup" ? "http://backend-rukhshifaheems-projects.vercel.app/user/register" : "http://backend-rukhshifaheems-projects.vercel.app/user/login";
       const { data } = await axios.post(url, form);
   
       if (state === "signup") {
@@ -27,7 +27,7 @@ const LoginSignup = () => {
         setState("login"); // Switch to login form
       } else {
         // Store the token in a cookie
-        document.cookie = `token=${data.token}; path=/; domain=localhost; secure=true; samesite=strict`;
+       document.cookie = `token=${data.token}; path=/; secure; samesite=strict`;
   
         toast.success("Login successful! Redirecting to shop...");
         setTimeout(() => navigate("/shop"), 2000); // Redirect after 2 sec

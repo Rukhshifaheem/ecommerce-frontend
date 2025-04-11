@@ -15,7 +15,7 @@ const ShopContextProvider = ({ children }) => {
     useEffect(() => {
         const fetchProducts = async () => {
             try {
-                const response = await axios.get("http://localhost:3000/product/allProducts");
+                const response = await axios.get("http://backend-rukhshifaheems-projects.vercel.app/product/allProducts");
                 setAllProducts(response.data);
 
                 // Load cart from localStorage or initialize it
@@ -44,7 +44,7 @@ const ShopContextProvider = ({ children }) => {
 
         try {
             const response = await axios.post(
-                "http://localhost:3000/cart/addToCart",
+                "http://backend-rukhshifaheems-projects.vercel.app/cart/addToCart",
                 { itemId, quantity: 1 },
                 {
                     headers: {
@@ -76,7 +76,7 @@ const ShopContextProvider = ({ children }) => {
         try {
             // Remove item from backend cart
             const response = await axios.post(
-                "http://localhost:3000/cart/removeFromCart",
+                "http://backend-rukhshifaheems-projects.vercel.app/cart/removeFromCart",
                 { itemId },
                 {
                     headers: {
