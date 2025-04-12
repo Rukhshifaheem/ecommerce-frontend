@@ -19,7 +19,7 @@ const LoginSignup = () => {
     setError("");
   
     try {
-      const url = state === "signup" ? "http://backend-rukhshifaheems-projects.vercel.app/user/register" : "http://backend-rukhshifaheems-projects.vercel.app/user/login";
+      const url = state === "signup" ? "https://backend-rukhshifaheems-projects.vercel.app/user/register" : "https://backend-rukhshifaheems-projects.vercel.app/user/login";
       const { data } = await axios.post(url, form);
   
       if (state === "signup") {

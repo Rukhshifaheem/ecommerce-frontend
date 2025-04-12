@@ -9,7 +9,7 @@ const Popular = () => {
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const response = await axios.get("http://backend-rukhshifaheems-projects.vercel.app/product/popularInWomen"); // Replace with your API endpoint
+          const response = await axios.get("https://backend-rukhshifaheems-projects.vercel.app/product/popularInWomen"); // Replace with your API endpoint
           setPopularProducts(response.data);
         } catch (error) {
           console.error("Error fetching data:", error);
